@@ -4,6 +4,21 @@ This code is a super simple example to understand how to run a Tensorflow (or Ke
 
 ## Train the model on a computer
 
+This is a super simple model that uses Keras to learn XOR operation :
+
+**[index.py](https://github.com/OmarAflak/TensorflowLite-XOR/blob/master/xor/index.py)**
+
+```python
+X = np.array([[0,0],[0,1],[1,0],[1,1]])
+Y = np.array([[0],[1],[1],[0]])
+
+model = Sequential()
+model.add(Dense(8, input_dim=2, activation='tanh'))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(loss='binary_crossentropy', optimizer=SGD(lr=0.1))
+model.fit(X, Y, batch_size=1, nb_epoch=1000)
+```
+
 run the python script :
 
     python index.py
