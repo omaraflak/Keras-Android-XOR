@@ -6,7 +6,7 @@ This code is a simple example to understand how to run a Keras model on Android 
 
 This is a super simple model that uses Keras to learn XOR operation :
 
-**[index.py](https://github.com/OmarAflak/TensorflowLite-XOR/blob/master/xor/index.py)**
+**[index.py](https://github.com/OmarAflak/Keras-Android-XOR/blob/master/keras/index.py)**
 
 ```python
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
@@ -27,7 +27,7 @@ When done, the script should have created an `out` folder which contains several
 
 ## Run the model on Android
 
-**[MainActivity.java](https://github.com/OmarAflak/TensorflowLite-XOR/blob/master/TensorflowLiteXOR/app/src/main/java/aflak/me/tensorflowlitexor/MainActivity.java)**
+**[MainActivity.java](https://github.com/OmarAflak/Keras-Android-XOR/blob/master/android/app/src/main/java/aflak/me/tensorflowlitexor/MainActivity.java)**
 
 ```java
 public class MainActivity extends AppCompatActivity {
