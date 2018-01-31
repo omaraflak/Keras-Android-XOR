@@ -1,6 +1,6 @@
-# How to use a Tensorflow model on Android
+# How to run a Keras model on Android
 
-This code is a super simple example to understand how to run a Tensorflow (or Keras) model on Android.
+This code is a simple example to understand how to run a Keras model on Android using Tensorflow API.
 
 ## Train the model on a computer
 
