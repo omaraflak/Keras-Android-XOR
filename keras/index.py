@@ -8,11 +8,11 @@ from tensorflow.python.tools import freeze_graph, optimize_for_inference_lib
 
 import numpy as np
 
-def export_model_for_mobile(saver, model_name, input_node_names, output_node_name):
+def export_model_for_mobile(model_name, input_node_names, output_node_name):
     tf.train.write_graph(K.get_session().graph_def, 'out', \
         model_name + '_graph.pbtxt')
 
-    saver.save(K.get_session(), 'out/' + model_name + '.chkp')
+    tf.train.Saver().save(K.get_session(), 'out/' + model_name + '.chkp')
 
     freeze_graph.freeze_graph('out/' + model_name + '_graph.pbtxt', None, \
         False, 'out/' + model_name + '.chkp', output_node_name, \
@@ -41,7 +41,7 @@ def main():
     model.compile(loss='binary_crossentropy', optimizer=SGD(lr=0.1))
     model.fit(X, Y, batch_size=1, nb_epoch=1000)
 
-    export_model_for_mobile(tf.train.Saver(), 'xor_nn', ["dense_1_input"], "dense_2/Sigmoid")
+    export_model_for_mobile('xor_nn', ["dense_1_input"], "dense_2/Sigmoid")
     model.summary()
 
 if __name__=='__main__':

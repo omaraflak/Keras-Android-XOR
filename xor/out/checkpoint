@@ -1,2 +1,0 @@
-model_checkpoint_path: "xor_nn.chkp"
-all_model_checkpoint_paths: "xor_nn.chkp"
